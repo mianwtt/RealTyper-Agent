@@ -1,0 +1,12 @@
+.deps/
+.packages/
+.venv/
+__pycache__/
+.pytest_cache/
+runs/
+*.log
+.env
+.env.*
+!.env.example
+*.pyc
+*.pyo

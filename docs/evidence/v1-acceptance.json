@@ -1,0 +1,92 @@
+{
+  "release": "1.0.0",
+  "baseline": "0.4.0",
+  "verified_on": "2026-11-10",
+  "unit_tests_passed": 31,
+  "unit_test_basis": "V1 freeze record in VALIDATION.md",
+  "note": "Passed includes expected rejection and interruption cases; it does not always mean source equals actual.",
+  "fixtures": [
+    {
+      "case": "native",
+      "passed": true,
+      "source": "发力、法力、乏力。\nHello 😀 123",
+      "actual": "发力、法力、乏力。\nHello 😀 123",
+      "other_field": "",
+      "message": null,
+      "record_sha256": "453345a1d90cf0377c623467ded334f37a6ca6321b398cce92a03182be3e8c73"
+    },
+    {
+      "case": "model",
+      "passed": true,
+      "source": "默认模式",
+      "actual": "默认模式",
+      "other_field": "",
+      "message": null,
+      "record_sha256": "61adb4a72a75d818e368a43efd186c6a2aae3cada9eaee86af213dda7b6c2d1b"
+    },
+    {
+      "case": "nonempty",
+      "passed": true,
+      "source": "默认模式",
+      "actual": "已有内容",
+      "other_field": "",
+      "message": "目标框已有文字，请使用空白输入框。",
+      "record_sha256": "75c686ecc30292a0dcc9fc266690eb4ea0d522a42f36e0806ec87a9440c2f9da"
+    },
+    {
+      "case": "focus",
+      "passed": true,
+      "source": "大模型的作用就是为了提高生产力",
+      "actual": "",
+      "other_field": "",
+      "message": "输入焦点已经改变，已停止。",
+      "record_sha256": "e9f6edbd141f1bc4e3aac902f26d0f3d9f57b8d36d5c65217b6c07a8e44f4e55"
+    },
+    {
+      "case": "pause-stop",
+      "passed": true,
+      "source": "发力法力乏力",
+      "actual": "发力法力",
+      "other_field": "",
+      "message": null,
+      "record_sha256": "d99d30c5c9d58e62b819fed22bf4a8ada59065c496a64f2828d9074c016cdee3"
+    },
+    {
+      "case": "pause-resume",
+      "passed": true,
+      "source": "发力法力乏力",
+      "actual": "发力法力乏力",
+      "other_field": "",
+      "message": null,
+      "record_sha256": "ff8cb3127b04f5c2d68d06c1ec7524b05b5be9c1202d1ae019b694a6eaf61636"
+    },
+    {
+      "case": "chrome-single-line",
+      "passed": true,
+      "source": "发力、法力 A😀",
+      "actual": "发力、法力 A😀",
+      "enter_events": 0,
+      "form_submissions": 0,
+      "selection_utf16": [
+        9,
+        9
+      ],
+      "message": null,
+      "record_sha256": "55b8e126a8b19ce48b1e01cc586d4b3eebb008fc6b1e2bc3e5befe341035beed"
+    },
+    {
+      "case": "chrome-multiline-rejected",
+      "passed": true,
+      "source": "发力\n法力",
+      "actual": "",
+      "enter_events": 0,
+      "form_submissions": 0,
+      "selection_utf16": [
+        0,
+        0
+      ],
+      "message": "浏览器跨行录入尚未适配，请先用单行原文，或使用原生多行编辑框。",
+      "record_sha256": "ae0a442e526d8f949e2d43f50c17815f41a7f7cf8f8f3230d69c39ed65fdde6d"
+    }
+  ]
+}

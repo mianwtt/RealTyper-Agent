@@ -1,0 +1,46 @@
+{
+  "observed_on": "2026-11-10",
+  "method": "GitHub repository pages plus official raw README; unauthenticated API was rate limited.",
+  "repositories": [
+    {
+      "repository": "browser-use/browser-use",
+      "stars_display": "120k",
+      "stars_are_rounded": true,
+      "star_source": "https://github.com/browser-use/browser-use",
+      "readme_source": "https://raw.githubusercontent.com/browser-use/browser-use/main/README.md",
+      "readme_sha256": "e90b560727988611d4f5796ffca34bfd65398a626ca6b74632057991ecf302ba"
+    },
+    {
+      "repository": "OpenHands/OpenHands",
+      "stars_display": "93.1k",
+      "stars_are_rounded": true,
+      "star_source": "https://github.com/OpenHands/OpenHands",
+      "readme_source": "https://raw.githubusercontent.com/OpenHands/OpenHands/main/README.md",
+      "readme_sha256": "85cb0c8cfc834a18fc48f4518093bb2c8ba3616cc16884c8dc4106647e1d9e56"
+    },
+    {
+      "repository": "crewAIInc/crewAI",
+      "stars_display": "60.7k",
+      "stars_are_rounded": true,
+      "star_source": "https://github.com/crewAIInc/crewAI",
+      "readme_source": "https://raw.githubusercontent.com/crewAIInc/crewAI/main/README.md",
+      "readme_sha256": "b0f39843f93676b12883d5821a34555e2146e62bd2c42dc12733fc41222de013"
+    },
+    {
+      "repository": "microsoft/autogen",
+      "stars_display": "61.8k",
+      "stars_are_rounded": true,
+      "star_source": "https://github.com/microsoft/autogen",
+      "readme_source": "https://raw.githubusercontent.com/microsoft/autogen/main/README.md",
+      "readme_sha256": "60fa90168565070a61b0f28296ff590bd6853da2477141f5ed0775007c20d7f2"
+    },
+    {
+      "repository": "huggingface/smolagents",
+      "stars_display": "30.3k",
+      "stars_are_rounded": true,
+      "star_source": "https://github.com/huggingface/smolagents",
+      "readme_source": "https://raw.githubusercontent.com/huggingface/smolagents/main/README.md",
+      "readme_sha256": "131628d2669b4ee983c715002b57ea4b375b62c8502f6354b8d9fdf3fbc39f8d"
+    }
+  ]
+}

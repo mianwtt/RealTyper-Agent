@@ -1,0 +1,89 @@
+{
+  "release": "1.0.2",
+  "verified_on": "2026-11-10",
+  "unit_tests_passed": 46,
+  "fixtures": [
+    {
+      "case": "append",
+      "passed": true,
+      "initial": "已有内容😀",
+      "source": "发力",
+      "full_result": "已有内容😀发力",
+      "task_result": "发力",
+      "selection_python": [
+        7,
+        7
+      ],
+      "record_sha256": "f15b8289def67ba7beb91b67c9e170dd903727514735ef04a331fa210678cfa1"
+    },
+    {
+      "case": "insert-head",
+      "passed": true,
+      "initial": "原有后文😀",
+      "source": "发力",
+      "full_result": "发力原有后文😀",
+      "task_result": "发力",
+      "selection_python": [
+        2,
+        2
+      ],
+      "record_sha256": "ec1122af64126ef783d88bf01717cc06860bd1eda5f0b2ea0fa517321fab370d"
+    },
+    {
+      "case": "insert-middle",
+      "passed": true,
+      "initial": "前文😀\n后文法力",
+      "source": "法力",
+      "full_result": "前文😀\n法力后文法力",
+      "task_result": "法力",
+      "selection_python": [
+        6,
+        6
+      ],
+      "record_sha256": "e7f648fdf4de6a98743f7feaa25d408b6a3a4276ca900e195c2ad10d1546bfb1"
+    },
+    {
+      "case": "selected",
+      "passed": true,
+      "initial": "前文后文",
+      "source": "发力",
+      "full_result": "前文发力后文",
+      "task_result": "发力",
+      "selection_python": [
+        4,
+        4
+      ],
+      "record_sha256": "1023824158949dedfc2e60097e42139535a1a05c28263e41b65bc55652293ad9"
+    },
+    {
+      "case": "edge-middle",
+      "passed": true,
+      "initial": "前文😀|后文",
+      "source": "法力 A😀",
+      "full_result": "前文😀|法力 A😀后文",
+      "task_result": "法力 A😀",
+      "selection_utf16": [
+        11,
+        11
+      ],
+      "form_submissions": 0,
+      "candidate_rollbacks": 0,
+      "record_sha256": "b4a0282f9c9aa354b167bb4e9ac1b0d0f18ed5e3719354d0905c3ac4ee3cd7ea"
+    },
+    {
+      "case": "chrome-middle",
+      "passed": true,
+      "initial": "前文😀|后文",
+      "source": "法力 A😀",
+      "full_result": "前文😀|法力 A😀后文",
+      "task_result": "法力 A😀",
+      "selection_utf16": [
+        11,
+        11
+      ],
+      "form_submissions": 0,
+      "candidate_rollbacks": 1,
+      "record_sha256": "d1c9b36df3d4fe93f90a12bdc3fff826a4f37530a8da8f49c933024459b4b7f2"
+    }
+  ]
+}

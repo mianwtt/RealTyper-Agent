@@ -1,0 +1,24 @@
+{
+  "release": "1.1.1",
+  "automated_tests": {
+    "verified_on": "2026-11-15",
+    "command": "python -m unittest discover -s tests -q",
+    "passed": 85,
+    "failed": 0,
+    "scope": "Unit and regression tests; this command does not perform live IME typing."
+  },
+  "current_changes": {
+    "attempts_per_chunk": 3,
+    "attempt_budget_shared_by": ["candidate confirmation", "English-mode recovery", "correction"],
+    "natural_pace_key_baseline_ms": 150,
+    "natural_pace_key_bounds_ms": [55, 390],
+    "natural_pace_word_pause_seconds": [0.2, 0.64],
+    "pace_note": "Heuristic sampled delays; not measured end-to-end throughput or fitted human typing data."
+  },
+  "live_input_baseline": {
+    "release": "1.1.0",
+    "record": "../../VALIDATION.md",
+    "fixtures": "Owned native windows and localhost browser fixtures, including Edge textarea and role=textbox contenteditable.",
+    "note": "Historical live input evidence is distinct from the current automated test run. v1.1.1 has not been relabeled as newly passing these live input fixtures."
+  }
+}

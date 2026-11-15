@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="530" viewBox="0 0 1440 530" role="img" aria-labelledby="title desc">
+  <title id="title">光标处插入与本次内容核验流程</title>
+  <desc id="desc">复制原文、定位光标、规划词组、实际拼音按键、候选上屏，仅对本次新增内容核验和回删修正。保留原有前后文，完成后只复制本次结果。</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7d91ab" stroke-width="1.4"/></marker></defs>
+  <rect width="1440" height="530" rx="24" fill="#f3f7fc"/>
+  <g font-family="'Microsoft YaHei UI','Noto Sans CJK SC',sans-serif">
+    <text x="48" y="62" fill="#153253" font-size="28" font-weight="700">一次录入，一条可核验的闭环</text>
+    <text x="48" y="100" fill="#637a96" font-size="18">本地词典打底，模型可选增强，程序执行并核验。每段最多尝试三次。</text>
+    <g fill="#fff" stroke="#d5e1ef">
+      <rect x="48" y="148" width="220" height="138" rx="16"/>
+      <rect x="326" y="148" width="220" height="138" rx="16"/>
+      <rect x="604" y="148" width="220" height="138" rx="16"/>
+      <rect x="882" y="148" width="220" height="138" rx="16"/>
+      <rect x="1160" y="148" width="232" height="138" rx="16" fill="#e9f7f1" stroke="#acd9c9"/>
+    </g>
+    <g stroke="#7d91ab" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M274 217H314"/><path d="M552 217H592"/><path d="M830 217H870"/><path d="M1108 217H1148"/></g>
+    <g fill="#315d9a" font-size="15" font-weight="700"><text x="69" y="181">01 / SOURCE</text><text x="347" y="181">02 / PLAN</text><text x="625" y="181">03 / TYPE</text><text x="903" y="181">04 / VERIFY</text><text x="1181" y="181" fill="#248467">05 / COMPLETE</text></g>
+    <g fill="#183552" font-size="26" font-weight="700"><text x="69" y="226">复制原文</text><text x="347" y="226">规划词组</text><text x="625" y="226">拼音与选词</text><text x="903" y="226">回读核验</text><text x="1181" y="226">本次一致</text></g>
+    <g fill="#667d96" font-size="17"><text x="69" y="259">光标定位插入位置</text><text x="347" y="259">本地词典 + 可选 Qwen</text><text x="625" y="259">实际按键，随机间隔</text><text x="903" y="259">只对比本次新增文字</text><text x="1181" y="259">仅复制本次输入</text></g>
+    <path d="M990 292V358H714V295" fill="none" stroke="#ce9362" stroke-width="2.3" marker-end="url(#arrow)"/>
+    <rect x="789" y="334" width="290" height="49" rx="12" fill="#fff1e5" stroke="#e8cfb9"/>
+    <text x="934" y="366" fill="#9b612d" font-size="19" text-anchor="middle">出现差异 → 回删 → 重新输入</text>
+    <rect x="48" y="425" width="1344" height="64" rx="14" fill="#e5edf7"/>
+    <text x="76" y="466" fill="#405d80" font-size="19">Ctrl + Alt + V  开始 / 暂停 / 继续</text>
+    <text x="650" y="466" fill="#405d80" font-size="19">Ctrl + Alt + Q  停止</text>
+    <text x="1080" y="466" fill="#405d80" font-size="19">焦点改变即停止</text>
+  </g>
+</svg>

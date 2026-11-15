@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="600" viewBox="0 0 1440 600" role="img" aria-labelledby="title desc">
+  <title id="title">Pinyin Agent · 拼音录入 Agent V1</title>
+  <desc id="desc">按词组输入，按原文交付。在光标处插入，保留已有前后文，仅核验本次新增文字。右侧为拼音选词流程示意。</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1425"/><stop offset="1" stop-color="#132642"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#58e3c0"/><stop offset="1" stop-color="#91c8ff"/></linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#9bb5d9" stroke-opacity=".06"/></pattern>
+  </defs>
+  <rect width="1440" height="600" rx="28" fill="url(#bg)"/>
+  <rect width="1440" height="600" rx="28" fill="url(#grid)"/>
+  <g font-family="'Microsoft YaHei UI','Noto Sans CJK SC',sans-serif">
+    <rect x="64" y="58" width="44" height="44" rx="12" fill="url(#accent)"/>
+    <path d="M76 74h20M86 69v23M77 86h18" stroke="#10243b" stroke-width="2.5" fill="none"/>
+    <text x="124" y="88" fill="#f3f7ff" font-size="25" font-weight="700">Pinyin Agent</text>
+    <rect x="320" y="62" width="84" height="30" rx="15" fill="#233c52"/>
+    <text x="362" y="83" fill="#75e5c8" font-size="16" text-anchor="middle">v1.1.1</text>
+    <text x="64" y="202" fill="#fff" font-size="57" font-weight="700">按词组输入，</text>
+    <text x="64" y="280" fill="url(#accent)" font-size="57" font-weight="700">按原文交付。</text>
+    <text x="67" y="343" fill="#b9cbe2" font-size="23">复制原文，按下快捷键。</text>
+    <text x="67" y="382" fill="#b9cbe2" font-size="23">光标处插入 · 校对新增文字</text>
+    <rect x="65" y="435" width="244" height="58" rx="13" fill="#66e1bf"/>
+    <text x="187" y="472" fill="#10263a" font-size="24" text-anchor="middle" font-weight="700">Ctrl + Alt + V</text>
+    <text x="65" y="548" fill="#7892b1" font-size="17">WINDOWS  ·  微软拼音  ·  本地词典 + 可选 Qwen</text>
+
+    <rect x="770" y="124" width="606" height="354" rx="22" fill="#080e19" opacity=".25"/>
+    <rect x="750" y="108" width="606" height="354" rx="22" fill="#f5f8fc" stroke="#adc4df" stroke-opacity=".2"/>
+    <path d="M750 164H1356" stroke="#dce4ef"/>
+    <circle cx="778" cy="136" r="5" fill="#b0bfce"/><circle cx="797" cy="136" r="5" fill="#b0bfce"/><circle cx="816" cy="136" r="5" fill="#b0bfce"/>
+    <text x="842" y="142" fill="#62738b" font-size="17">拼音输入流程示意</text>
+    <text x="785" y="212" fill="#677c94" font-size="17">01  输入完整拼音</text>
+    <text x="785" y="258" fill="#153254" font-size="35" font-family="Consolas,monospace">fa'li</text>
+    <path d="M885 229V264" stroke="#2263da" stroke-width="2"/>
+    <rect x="781" y="282" width="542" height="62" rx="12" fill="#fff" stroke="#d8e2ee"/>
+    <rect x="790" y="291" width="166" height="44" rx="8" fill="#e8f3ff"/>
+    <text x="811" y="320" fill="#245ade" font-size="23">1 发力</text>
+    <text x="981" y="320" fill="#66758a" font-size="23">2 法力</text>
+    <text x="1150" y="320" fill="#66758a" font-size="23">3 乏力</text>
+    <path d="M796 373l8 8 16-18" stroke="#179978" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="833" y="380" fill="#274967" font-size="20">上屏后仅核对本次新增文字</text>
+    <rect x="785" y="402" width="258" height="31" rx="15" fill="#e0f5ed"/>
+    <text x="914" y="424" fill="#24856d" font-size="16" text-anchor="middle">发力 → 原文一致 → 继续</text>
+    <text x="750" y="516" fill="#9cb2cc" font-size="18">有差异，局部回删；本次一致，完成任务。</text>
+  </g>
+</svg>
