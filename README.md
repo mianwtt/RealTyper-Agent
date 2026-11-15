@@ -1,12 +1,17 @@
 <p align="center">
-  <img src="docs/assets/hero.svg" alt="Pinyin Agent：按词组输入，按原文交付" width="100%">
+  <img src="docs/assets/hero.svg" alt="RealTyper-Agent · Real Typing, Not Text Insertion." width="100%">
 </p>
 
-<h1 align="center">Pinyin Agent · 拼音录入 Agent</h1>
+<h1 align="center">RealTyper-Agent</h1>
 
 <p align="center">
-  <strong>复制原文，定位光标，按下快捷键。</strong><br>
+  <strong>Real Typing, Not Text Insertion.</strong><br>
   让 Agent 规划词组、敲入拼音、核对上屏结果，完成中文录入。
+</p>
+
+<p align="center">
+  An intelligent typing agent that performs real keystroke and IME interactions,<br>
+  with semantic input planning, candidate selection, and automatic error correction.
 </p>
 
 <p align="center">
@@ -27,7 +32,7 @@
 
 ---
 
-**Pinyin Agent 是一个 Windows 中文录入工具。** 它读取剪贴板里的原文，将文字规划成词组，通过微软拼音按键与候选确认输入，再回读本次新增内容，发现差异时局部回删、重输。
+**RealTyper-Agent 是一个 Windows 中文智能录入工具。** 它读取剪贴板里的原文，将文字规划成词组，通过微软拼音按键与候选确认输入，再回读本次新增内容，发现差异时局部回删、重输。
 
 日常使用只有一个入口：**Ctrl + Alt + V**。词典可独立完成规划，也可以结合本机 Qwen；输入框已有文字时，从当前光标处继续。
 
@@ -52,11 +57,16 @@
 
 ## 快速开始
 
-需要 **Windows、Python 3.9+ 和已启用的微软拼音中文全拼**。从 GitHub 下载并解压项目，在项目文件夹打开 PowerShell：
+需要 **Windows、Python 3.9+ 和已启用的微软拼音中文全拼**。从 GitHub 下载并解压项目，在项目文件夹打开 PowerShell；也可以先克隆仓库：
+
+```powershell
+git clone https://github.com/mianwtt/RealTyper-Agent.git
+cd RealTyper-Agent
+```
 
 ```powershell
 python -m pip install --target .deps -r requirements.txt
-python -m pinyin_agent --quick
+python -m realtyper_agent --quick
 ```
 
 环境准备好后，日常直接双击 **[快捷输入.cmd](快捷输入.cmd)**。
@@ -83,10 +93,22 @@ python -m pinyin_agent --quick
 **没有模型也能用：**
 
 ```powershell
-python -m pinyin_agent --quick --offline
+python -m realtyper_agent --quick --offline
 ```
 
 默认 `--hybrid` 先生成本地词典计划，再尝试本机 Ollama 的 `qwen3.5:9b`。模型请求最多等待 20 秒；不可用或计划不合格时继续使用本地计划。程序不会自动下载模型。超过 400 字符的原文直接使用本地规划。
+
+### 可选：本地部署 LLM
+
+安装并打开 [Ollama](https://ollama.com/download)，在 PowerShell 下载模型并检查列表，然后启动 Agent：
+
+```powershell
+ollama pull qwen3.5:9b
+ollama list
+python -m realtyper_agent --quick --url http://127.0.0.1:11434 --model qwen3.5:9b
+```
+
+详细图文可参考 **智泊AI产品经理教程** 的 [《〖保姆级教程〗手把手教你用Ollama部署Qwen3-VL大模型，建议收藏！》](https://blog.csdn.net/2301_80239908/article/details/154696963)（CSDN）。该文以 **Qwen3-VL** 为例，供学习 Ollama 安装与本地部署；本项目默认使用 **qwen3.5:9b**。命令与模型信息以 [Ollama 官方文档](https://docs.ollama.com/cli) 和 [模型页](https://ollama.com/library/qwen3.5:9b) 为准。仅使用词典时可跳过这一步。
 
 <a id="features"></a>
 
@@ -105,10 +127,10 @@ python -m pinyin_agent --quick --offline
 
 ```powershell
 # 更慢，便于观察输入过程
-python -m pinyin_agent --quick --pace slow
+python -m realtyper_agent --quick --pace slow
 
 # 更快，保留随机间隔
-python -m pinyin_agent --quick --pace brisk
+python -m realtyper_agent --quick --pace brisk
 ```
 
 ## 想先看计划？打开验证台
@@ -116,14 +138,14 @@ python -m pinyin_agent --quick --pace brisk
 双击 **[启动.cmd](启动.cmd)**，或运行：
 
 ```powershell
-python -m pinyin_agent
+python -m realtyper_agent
 ```
 
 在一个窗口里查看**原文、词组、拼音、实际录入结果和核验记录**。先生成计划，再用自带编辑器试输入，适合检查分词、多音字和候选策略。
 
 ![本地验证台：原文与输入计划、系统输入法测试编辑器、候选与核验记录](docs/assets/planner.png)
 
-*真实界面截图。截图中的版本和布局供参考；当前默认使用本地词典与 Qwen 结合规划。*
+*RealTyper-Agent v1.1.1 真实截图：使用本地词典生成计划，尚未执行录入；日常默认模式为词典与 Qwen 结合。*
 
 <a id="how-it-works"></a>
 

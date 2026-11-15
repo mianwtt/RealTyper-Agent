@@ -3,7 +3,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import ttk
-from . import __version__
+from . import APP_NAME, __version__
 from .engine import Agent, Stopped
 from .external import capture_target, bind_target, ExternalBackend, TargetError
 from .hotkeys import GlobalHotkeys
@@ -116,7 +116,7 @@ class QuickPanel:
         self.root, self.args = root, args
         self.events = queue.Queue()
         self.closed = False
-        root.title("拼音快捷输入 v%s" % __version__)
+        root.title("%s v%s · 快捷输入" % (APP_NAME, __version__))
         root.geometry("470x340")
         root.resizable(False, False)
         self.pinned=tk.BooleanVar(master=root,value=True)

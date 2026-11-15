@@ -65,7 +65,7 @@ def capture_quick():
 
 def capture_planner():
     root=tk.Tk()
-    args=build_parser().parse_args(['--text','我会把默认模式改为离线规则。'])
+    args=build_parser().parse_args(['--offline','--text','大模型的作用就是为了提高生产力。'])
     app=App(root,args)
     # Fit this display while keeping every action and the status line visible.
     root.geometry('1180x820+20+20')
@@ -95,7 +95,7 @@ def capture_planner():
     root.after(100,poll)
     root.mainloop()
 
-capture_quick()
+if '--planner-only' not in sys.argv:capture_quick()
 if '--quick-only' not in sys.argv:capture_planner()
 report_name='readme-quick-capture.json' if '--quick-only' in sys.argv else 'readme-capture.json'
 (ROOT/'runs'/report_name).write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

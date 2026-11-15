@@ -8,7 +8,7 @@ import sys
 import tkinter as tk
 from tkinter import ttk, messagebox
 from pathlib import Path
-from . import __version__
+from . import APP_NAME, __version__
 from .domain import differences
 from .planner import make_plan,make_hybrid_plan
 from .ollama import Ollama, DEFAULT_URL, DEFAULT_MODEL
@@ -30,7 +30,7 @@ class App:
         self.last_log = None
         self.exit_code = 0
         self.last_elapsed = 0
-        root.title("拼音录入 Agent v%s · 本地验证台" % __version__)
+        root.title("%s v%s · 本地验证台" % (APP_NAME, __version__))
         root.geometry("1180x820")
         root.minsize(960, 700)
         root.configure(bg="#f3f6fc")
@@ -76,7 +76,7 @@ class App:
         outer.pack(fill="both", expand=True)
         top = ttk.Frame(outer)
         top.pack(fill="x")
-        ttk.Label(top,text="拼音录入 Agent",style="Title.TLabel").pack(side="left")
+        ttk.Label(top,text=APP_NAME,style="Title.TLabel").pack(side="left")
         ttk.Label(top,text="  v%s  /  本地验证台" % __version__,style="Muted.TLabel").pack(side="left",pady=(12,0))
         ttk.Button(top,text="开启快捷模式",command=self.open_quick).pack(side="right")
         ttk.Label(outer,text="规划输入片段，观察系统候选，再核验每一个字。",style="Muted.TLabel").pack(anchor="w",pady=(5,14))
@@ -284,7 +284,7 @@ class App:
 
     def open_quick(self):
         pace=next(key for key,profile in PACES.items() if profile.label==self.pace.get())
-        subprocess.Popen([sys.executable,"-m","pinyin_agent","--quick","--url",self.url.get(),
+        subprocess.Popen([sys.executable,"-m","realtyper_agent","--quick","--url",self.url.get(),
             "--model",self.model.get(),"--pace",pace,"--"+self.mode.get()],
             cwd=str(Path(__file__).resolve().parents[1]),creationflags=subprocess.CREATE_NO_WINDOW)
 
@@ -363,7 +363,7 @@ class App:
 
 
 def build_parser():
-    parser=argparse.ArgumentParser(description="中文拼音录入 Agent 本地验证台")
+    parser=argparse.ArgumentParser(prog="python -m realtyper_agent",description="RealTyper-Agent · 中文拼音智能录入与本地验证台")
     parser.add_argument("--url",default=DEFAULT_URL)
     parser.add_argument("--model",default=DEFAULT_MODEL)
     planning=parser.add_mutually_exclusive_group()

@@ -1,4 +1,4 @@
-# 使用说明
+# RealTyper-Agent 使用说明
 
 ## 环境与启动
 
@@ -6,7 +6,7 @@
 
 ```powershell
 python -m pip install --target .deps -r requirements.txt
-python -m pinyin_agent --quick
+python -m realtyper_agent --quick
 ```
 
 日常入口为 [快捷输入.cmd](../快捷输入.cmd)，本地验证台入口为 [启动.cmd](../启动.cmd)。启动器需要 `pythonw.exe` 可从 PATH 找到；若启动器没有打开窗口，先用上面的 `python` 命令查看错误。
@@ -15,19 +15,25 @@ python -m pinyin_agent --quick
 
 ```powershell
 # 词典 + Qwen：默认模式
-python -m pinyin_agent --quick
+python -m realtyper_agent --quick
 
 # 仅本地词典，不调用模型
-python -m pinyin_agent --quick --offline
+python -m realtyper_agent --quick --offline
 
 # 更慢的节奏
-python -m pinyin_agent --quick --pace slow
+python -m realtyper_agent --quick --pace slow
 
 # 指定你已安装并验证的模型
-python -m pinyin_agent --quick --url http://127.0.0.1:11434 --model your-installed-model
+python -m realtyper_agent --quick --url http://127.0.0.1:11434 --model your-installed-model
 ```
 
 `your-installed-model` 请替换为实际模型名称。当前集成的是 Ollama API。
+
+### 可选：部署本地模型
+
+从 [Ollama 官网](https://ollama.com/download) 安装 Windows 版并打开应用，运行 `ollama pull qwen3.5:9b` 下载默认模型，再用 `ollama list` 查看本机已安装模型。保持 Ollama 运行，使用 `--url http://127.0.0.1:11434 --model qwen3.5:9b` 连接。其他模型请将 `--model` 改为列表中的实际名称；不使用模型时直接加 `--offline`。
+
+图文入门参考：**智泊AI产品经理教程**，[《〖保姆级教程〗手把手教你用Ollama部署Qwen3-VL大模型，建议收藏！》](https://blog.csdn.net/2301_80239908/article/details/154696963)，CSDN。文章演示的是 Qwen3-VL，供学习本地部署流程；本项目默认模型为 qwen3.5:9b。最新命令和模型信息见 [Ollama CLI 文档](https://docs.ollama.com/cli) 与 [官方模型页](https://ollama.com/library/qwen3.5:9b)。
 
 ## 快捷模式
 
@@ -44,7 +50,7 @@ python -m pinyin_agent --quick --url http://127.0.0.1:11434 --model your-install
 
 ## 本地验证台
 
-运行 `python -m pinyin_agent`：
+运行 `python -m realtyper_agent`：
 
 1. 输入原文，或点击“读取剪贴板”。
 2. 默认使用词典与 Qwen 结合，也可选仅本地词典；需要时检查模型连接。
@@ -102,7 +108,7 @@ python -m pinyin_agent --quick --url http://127.0.0.1:11434 --model your-install
 
 ```powershell
 python -m unittest discover -s tests -v
-python -m pinyin_agent --smoke --offline --text '发力、法力、乏力'
+python -m realtyper_agent --smoke --offline --text '发力、法力、乏力'
 python tests/windows_acceptance.py
 python tests/external_acceptance.py --case native
 python tests/external_acceptance.py --case model

@@ -1,5 +1,7 @@
 # Agent 项目 README 研究
 
+2026-11-15 品牌更新：项目统一使用 **RealTyper-Agent** 与 **Real Typing, Not Text Insertion.**；横幅和两个真实界面截图同步更新。验证台截图在仅本地词典模式生成计划，未执行输入。本地 LLM 入门补充引用智泊AI产品经理教程的 [Ollama 部署 Qwen3-VL 文章](https://blog.csdn.net/2301_80239908/article/details/154696963)，注明作者、标题、平台和原文链接，并区分文章的示例模型与本项目默认模型；操作命令另用 Ollama 官方文档核对。
+
 ## 2026-11-15：面向 GitHub 发布的改写
 
 用户所说的“百星项目”指超过 100 Star 的项目。本轮重新查看 [Browser Use 官方 README](https://github.com/browser-use/browser-use/blob/main/README.md)、[smolagents 官方 README](https://github.com/huggingface/smolagents/blob/main/README.md) 和 [CrewAI 官方 README](https://github.com/crewAIInc/crewAI/blob/main/README.md)。当日仓库页显示 Browser Use 约 121k、smolagents 约 30.4k，符合样本条件；数字仅作筛选依据。
@@ -10,7 +12,7 @@
 
 ## 2026-11-10：初版研究记录
 
-研究日期：2026-11-10。目标是学习 Agent 项目如何呈现价值、演示能力和引导上手，并应用到拼音录入 Agent V1。
+研究日期：2026-11-10。目标是学习 Agent 项目如何呈现价值、演示能力和引导上手，并应用到 RealTyper-Agent V1。
 
 ## 样本与来源
 
@@ -44,9 +46,9 @@ GitHub REST API 本次触发未认证限流，Star 使用仓库页面核验值�
 
 - `assets/hero.svg`、`assets/workflow.svg`：为本项目编写的原创矢量图；首屏选词窗口明确标注为流程示意。
 - `assets/quick-mode.png`：运行 V1 快捷模式并真实注册快捷键后的窗口截图。
-- `assets/planner.png`：V1 调用本机 `qwen3.5:9b` 生成计划后的真实界面，截图时未执行录入。
+- `assets/planner.png`：当前为 RealTyper-Agent v1.1.1 使用本地词典生成计划的真实界面，截图时未执行录入。初版截图使用过本机 Qwen。
 - `assets/pinyin-demo.gif`：从已有的微软拼音真实输入录像转换而来，展示多字组合与上屏。该录像来自 V1 沿用的原生输入适配器。
 
 截图由 `scripts/capture_readme.py` 在应用自己的窗口内导出。验证台窗口与文本面板尺寸适配当前屏幕；不替换界面文字、拼接成功状态或借用其他项目的演示素材。
 
-重新导出前需关闭快捷模式以释放快捷键；运行脚本会调用本机 Ollama 生成真实计划。验收与来源摘要通过 `scripts/export_readme_evidence.py` 从已有本地记录导出。
+重新导出前需关闭快捷模式以释放快捷键；运行脚本使用本地词典生成真实计划。两个窗口可用 `--quick-only` 和 `--planner-only` 分别导出。验收与来源摘要通过 `scripts/export_readme_evidence.py` 从已有本地记录导出。

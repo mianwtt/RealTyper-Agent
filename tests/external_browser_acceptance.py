@@ -18,7 +18,7 @@ from pinyin_agent.hotkeys import GlobalHotkeys
 from pinyin_agent.ui import build_parser
 from pinyin_agent import __version__
 
-HTML='''<!doctype html><meta charset="utf-8"><title>拼音快捷输入 · 自有浏览器测试</title>
+HTML='''<!doctype html><meta charset="utf-8"><title>RealTyper-Agent · 自有浏览器测试</title>
 <style>body{font:22px sans-serif;margin:30px}textarea,[contenteditable]{font:26px sans-serif;width:90%;height:280px;border:1px solid #888}</style>
 <p>自有浏览器测试，保持本输入框焦点。</p><form><textarea aria-label="拼音快捷测试框" autofocus></textarea><button>测试按钮</button></form>
 <script>let sent=0,enters=0,keylog=[];let box=document.querySelector('textarea,[contenteditable]');

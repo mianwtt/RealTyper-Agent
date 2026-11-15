@@ -1,3 +1,12 @@
+# RealTyper-Agent 品牌更新
+
+2026-11-15。
+
+- 项目与 GitHub 仓库统一更名为 RealTyper-Agent，Slogan 为 “Real Typing, Not Text Insertion.”。
+- README、横幅、验证台、快捷窗口、截图与启动器同步更新；新增 `python -m realtyper_agent` 入口，原 `python -m pinyin_agent` 入口继续兼容。
+- 补充本地 Ollama 部署简要说明，并明确标注参考文章作者、标题、平台及原文链接。
+- 版本保持 v1.1.1，录入策略、输入节奏和三次尝试上限不变。
+
 # V1 · v1.1.1
 
 更新日期：2026-11-11。
